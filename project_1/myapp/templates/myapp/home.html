@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>File Upload and YouTube URL</title>
+</head>
+<body>
+	<h1>File Upload and YouTube URL</h1>
+
+	<!-- Option 1: File Upload -->
+	<h2>Option 1: File Upload</h2>
+	<form action="{% url 'index_name' %}" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		<label for="file_input">Choose a file to upload:</label>
+		<input type="file" id="file_input" name="uploaded_file">
+		<br><br>
+		<input type="submit" value="Submit">
+	</form>
+
+	<!-- Option 2: YouTube URL -->
+	<h2>Option 2: YouTube URL</h2>
+	<form action="{% url 'index_name' %}" method="POST">
+		{% csrf_token %}
+		<label for="youtube_input">Enter a YouTube URL:</label>
+		<input type="text" id="youtube_input" name="youtube_url">
+		<br><br>
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
